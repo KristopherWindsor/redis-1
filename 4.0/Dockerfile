@@ -42,7 +42,7 @@ RUN set -ex; \
 	apt-get install -y $buildDeps --no-install-recommends; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
-	wget -O redis.tar.gz "$REDIS_DOWNLOAD_URL"; \
+	wget --no-check-certificate -O redis.tar.gz "$REDIS_DOWNLOAD_URL"; \
 	mkdir -p /usr/src/redis; \
 	tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1; \
 	rm redis.tar.gz; \
